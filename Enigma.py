@@ -82,27 +82,27 @@ class EnigmaMachine:
         print(char)
 
         index = self.alphabet.index(char)
-        index = (index + offset1 - offset2) % 26
+        index = (index + offset2 - offset1) % 26
         char = self.rotor2[index]
         print(char)
 
         index = self.alphabet.index(char)
-        index = (index + offset2 - offset3) % 26
+        index = (index + offset3 - offset2) % 26
         char = self.rotor3[index]
         print(char)
 
         index = self.alphabet.index(char)
-        index = (index + offset3 - offset4) % 26
+        index = (index + offset4 - offset3) % 26
         char = self.rotor4[index]
         print(char)
 
         index = self.alphabet.index(char)
-        index = (index + offset4 - offset5) % 26
+        index = (index + offset5 - offset4) % 26
         char = self.rotor5[index]
         print(char)
 
         index = self.alphabet.index(char)
-        index = (index + offset5 - offset6) % 26
+        index = (index + offset6 - offset5) % 26
         char = self.rotor6[index]
         print(char)
 
@@ -112,28 +112,29 @@ class EnigmaMachine:
 
         # Возвращаюсь через роторы в обратном порядке
         index = self.rotor6.index(char)
-        index = (index - offset6) % 26
+        index = (index - offset6 + offset5) % 26
         char = self.alphabet[index]
 
         index = self.rotor5.index(char)
-        index = (index + offset6 - offset5) % 26
+        index = (index - offset5 + offset4) % 26
         char = self.alphabet[index]
 
         index = self.rotor4.index(char)
-        index = (index + offset5 - offset4) % 26
+        index = (index - offset4 + offset3) % 26
         char = self.alphabet[index]
 
         index = self.rotor3.index(char)
-        index = (index + offset4 - offset3) % 26
+        index = (index - offset3 + offset2) % 26
         char = self.alphabet[index]
 
         index = self.rotor2.index(char)
-        index = (index + offset3 - offset2) % 26
+        index = (index - offset2 + offset1) % 26
         char = self.alphabet[index]
 
         index = self.rotor1.index(char)
-        index = (index + offset2 - offset1) % 26
+        index = (index - offset1) % 26
         char = self.alphabet[index]
+
 
         return char
 
